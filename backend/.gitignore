@@ -1,0 +1,59 @@
+# Gradle
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+*.class
+
+# Gradle
+.gradle/
+build/
+
+# Spring Boot
+.env
+.env.local
+application-local.yml
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# npm (if applicable)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+.classpath
+.project
+.settings/
+
+# JetBrains
+.idea/
+*.iws
+*.iml
+.gradle/
+
+# OS
+.DS_Store
+Thumbs.db

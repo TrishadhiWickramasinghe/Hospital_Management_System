@@ -1,53 +1,120 @@
 # Hospital Management System
 
-A comprehensive Hospital Management System built with Next.js 14, featuring role-based access control, authentication, and specialized dashboards for different user types.
+A comprehensive, full-stack Hospital Management System featuring a **Next.js 14 frontend** with role-based access control and a **Spring Boot 3 backend** with JWT authentication and MongoDB integration.
 
-## Features
+## Stack Overview
 
-- 🔐 **Authentication & Authorization**
-  - JWT-based authentication with httpOnly cookies
-  - Role-based access control (ADMIN, DOCTOR, NURSE, RECEPTIONIST)
-  - Middleware-based route protection
+### Frontend - Next.js 14
+- React 18 with TypeScript
+- Server-side rendering with App Router
+- Tailwind CSS & shadcn/ui components
+- react-hook-form with Zod validation
+- Axios HTTP client with JWT interceptors
 
-- 👥 **Role-Based Dashboards**
-  - Admin Dashboard: User management, departments, reports
-  - Doctor Dashboard: Patient management, appointments, medical records
-  - Nurse Dashboard: Patient monitoring, task management
-  - Receptionist Dashboard: Appointment scheduling, patient check-in
-
-- 🎨 **Modern UI**
-  - Built with Tailwind CSS and shadcn/ui components
-  - Responsive design for all screen sizes
-  - Dark mode support
-
-- 📝 **Form Handling**
-  - react-hook-form for efficient form management
-  - Zod validation for type-safe schemas
-  - Real-time form validation
-
-- 🔌 **API Integration**
-  - Axios instance with automatic JWT token injection
-  - Request/response interceptors
-  - Automatic 401 redirect handling
+### Backend - Spring Boot 3
+- Java 17 with Maven
+- Spring Security with JWT (HS256)
+- MongoDB with Spring Data
+- Role-based access control
+- Comprehensive exception handling
 
 ## Project Structure
 
 ```
 hospital-management-system/
-├── app/
-│   ├── (auth)/
-│   │   ├── login/
-│   │   │   └── page.tsx
-│   │   └── layout.tsx
-│   ├── (dashboard)/
-│   │   ├── admin/
-│   │   │   └── page.tsx
-│   │   ├── doctor/
-│   │   │   └── page.tsx
-│   │   ├── nurse/
-│   │   │   └── page.tsx
-│   │   ├── receptionist/
-│   │   │   └── page.tsx
+├── frontend/         # Next.js 14 Application
+├── backend/          # Spring Boot 3 Application
+├── mobile-app/       # (Future) React Native/Flutter
+└── README.md
+```
+
+## Features
+
+### 🔐 Authentication & Authorization
+- **JWT Tokens:** HS256 signed tokens with 24-hour expiration
+- **Role-Based Access:** ADMIN, DOCTOR, NURSE, RECEPTIONIST
+- **Stateless Sessions:** Secure, scalable authentication
+- **Password Security:** BCrypt hashing for all passwords
+- **Token Validation:** Frontend middleware + backend filters
+
+### 👥 Role-Based Dashboards
+- **Admin Dashboard:** User management, departments, system reports
+- **Doctor Dashboard:** Patient management, appointments, medical records
+- **Nurse Dashboard:** Patient monitoring, task management
+- **Receptionist Dashboard:** Appointment scheduling, patient check-in
+
+### 🎨 Modern UI & UX
+- Responsive design for desktop and mobile
+- Built with Tailwind CSS and shadcn/ui
+- Real-time form validation
+- Conditional navigation based on user role
+- Professional sidebar navigation
+
+### 🔌 API Integration
+- Axios with automatic Bearer token injection
+- Request/response interceptors
+- Automatic 401 redirect to login
+- Standardized API response format
+- Comprehensive error handling
+
+## Project Structure
+
+```
+hospital-management-system/
+├── frontend/                  # Next.js 14 Frontend
+│   ├── app/
+│   │   ├── (auth)/login/
+│   │   ├── (dashboard)/admin/
+│   │   ├── (dashboard)/doctor/
+│   │   ├── (dashboard)/nurse/
+│   │   ├── (dashboard)/receptionist/
+│   │   ├── context/AuthContext.tsx
+│   │   ├── layout.tsx
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── ui/              # shadcn/ui components
+│   │   └── Sidebar.tsx
+│   ├── lib/
+│   │   ├── api.ts          # Axios client with interceptors
+│   │   └── validations.ts  # Zod schemas
+│   ├── types/
+│   │   └── index.ts        # TypeScript types
+│   ├── middleware.ts        # JWT verification
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── tailwind.config.ts
+│   └── README.md
+│
+├── backend/                   # Spring Boot 3 Backend
+│   ├── src/main/java/com/hospital/
+│   │   ├── auth/
+│   │   │   ├── controller/
+│   │   │   ├── dto/
+│   │   │   └── service/
+│   │   ├── config/
+│   │   │   ├── SecurityConfig.java
+│   │   │   ├── JwtUtil.java
+│   │   │   ├── JwtAuthFilter.java
+│   │   │   └── CustomUserDetailsService.java
+│   │   ├── shared/
+│   │   │   ├── document/
+│   │   │   ├── dto/
+│   │   │   ├── exception/
+│   │   │   └── repository/
+│   │   └── HospitalManagementSystemApplication.java
+│   ├── src/main/resources/
+│   │   └── application.yml
+│   ├── pom.xml              # Maven dependencies
+│   ├── README.md
+│   ├── QUICKSTART.md
+│   ├── API_DOCUMENTATION.md
+│   ├── .env.example
+│   ├── .gitignore
+│   └── .env
+│
+├── mobile-app/              # (Future) Mobile Application
+│
+└── README.md                 # This file
 │   │   └── layout.tsx
 │   ├── context/
 │   │   └── AuthContext.tsx
