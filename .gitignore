@@ -24,14 +24,13 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env
 
 # vercel
 .vercel
 
 # IDE
 .idea
-.vscode
 *.swp
 *.swo
 *~
+config.bat
